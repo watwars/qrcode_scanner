@@ -13,6 +13,7 @@ let scanning = false;
 qrcode.callback = res => {
   if (res) {
     outputData.innerText = res;
+    setTimeout(() => window.open(res), 1000)
     scanning = false;
 
     video.srcObject.getTracks().forEach(track => {
